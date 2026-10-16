@@ -11,7 +11,6 @@ let package = Package(
     ],
 	products: [
         .library(name: "DiscordKitCore", targets: ["DiscordKitCore"]),
-		.library(name: "DiscordKit", targets: ["DiscordKit"]), // User-oriented module, simplifies use of API for UI apps
         .library(name: "DiscordKitBot", targets: ["DiscordKitBot"]) // Bot-oriented module, for use in bots
 	],
 	dependencies: [
@@ -41,13 +40,13 @@ let package = Package(
                 "Objects/README.md"
             ]
         ),
-		.target(
-            name: "DiscordKit",
-            dependencies: [
-                .target(name: "DiscordKitCore"),
-                .product(name: "Logging", package: "swift-log")
-            ]
-        ),
+		// .target(
+        //     name: "DiscordKit",
+        //     dependencies: [
+        //         .target(name: "DiscordKitCore"),
+        //         .product(name: "Logging", package: "swift-log")
+        //     ]
+        // ),
         .target(
             name: "DiscordKitBot",
             dependencies: [
